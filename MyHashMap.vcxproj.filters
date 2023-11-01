@@ -21,5 +21,8 @@
     <ClCompile Include="HashTable.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyHashMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

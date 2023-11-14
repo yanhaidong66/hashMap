@@ -1,4 +1,5 @@
 #include<shared_mutex>
+#include<iostream>
 #include<thread>
 #include<string>
 using namespace std;
@@ -248,6 +249,7 @@ HashTable* HashMap::getUsingTable() {
 bool HashMap::rehash()
 {
 	rehashing = true;
+	cout << "rehashing";
 	int valueAmount = usingTable->getValueAmount();
 	int bucketAmount = usingTable->getBucketSize();
 	string* keys = new string[valueAmount];
@@ -258,6 +260,7 @@ bool HashMap::rehash()
 	rehashing = false;
 	delete[] keys;
 	delete[] values;
+	cout << "rehashEnd";
 	return true;
 }
 
@@ -307,4 +310,42 @@ int HashMap::getKeyAmount()
 int HashMap::getBucketAmount()
 {
 	return getUsingTable()->getBucketSize();
+}
+
+int main() {
+	HashMap* ht = new HashMap();
+	ht->put("1", 1);
+	ht->put("2", 2);
+	ht->put("3", 3);
+	ht->put("4", 4);
+	ht->put("5", 5);
+	ht->put("6", 6);
+	string s[29];
+	int v[29];
+	ht->put("7", 7);
+	ht->put("8", 8);
+	ht->put("9", 9);
+	ht->put("10", 10);
+	ht->put("11", 11);
+	ht->put("12", 12);
+	ht->put("13", 13);
+	ht->put("14", 14);
+	ht->put("15", 15);
+	ht->put("16", 16);
+	ht->put("17", 17);
+	ht->put("18", 18);
+	ht->put("19", 19);
+	ht->put("20", 20);
+	ht->put("21", 21);
+	ht->put("22", 22);
+	int si = ht->getAll(s, v, ht->getKeyAmount());
+	cout << "-------------" << endl;
+	for (int i = 0; i < si; i++) {
+		cout << " k:" << s[i];
+		cout << "         v:" << v[i];
+		cout << "       bucketAmount:" << ht->getBucketAmount();
+		cout << "          factor:" << ht->getUsingTable()->getFillFactor();
+		cout << "        keyAmount:" << ht->getKeyAmount() << endl;
+	}
+
 }

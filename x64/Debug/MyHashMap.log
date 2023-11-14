@@ -1,3 +1,26 @@
-﻿  HashMap.cpp
-C:\Users\hd\Desktop\MyHashMap\HashMap.cpp(146,6): warning C4101: “v”: 未引用的局部变量
-  MyHashMap.vcxproj -> C:\Users\hd\Desktop\MyHashMap\x64\Debug\MyHashMap.exe
+﻿MyHashMap.obj : error LNK2005: "public: __cdecl HashMap::HashMap(void)" (??0HashMap@@QEAA@XZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: __cdecl HashTable::HashTable(int)" (??0HashTable@@QEAA@H@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: __cdecl HashTable::HashTable(void)" (??0HashTable@@QEAA@XZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashMap::changeUsingTable(class HashTable *)" (?changeUsingTable@HashMap@@QEAA_NPEAVHashTable@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: class HashTable * __cdecl HashMap::createTable(int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * const,int * const,int)" (?createTable@HashMap@@QEAAPEAVHashTable@@HQEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAHH@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::delet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?delet@HashMap@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashTable::delet(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?delet@HashTable@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::get(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?get@HashMap@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::getAll(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > *,int *,int)" (?getAll@HashMap@@QEAAHPEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAHH@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashTable::getAll(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > * const,int * const,int)" (?getAll@HashTable@@QEAAHQEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QEAHH@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::getBucketAmount(void)" (?getBucketAmount@HashMap@@QEAAHXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashTable::getBucketSize(void)" (?getBucketSize@HashTable@@QEAAHXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: double __cdecl HashTable::getFillFactor(void)" (?getFillFactor@HashTable@@QEAANXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::getKeyAmount(void)" (?getKeyAmount@HashMap@@QEAAHXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: class HashTable * __cdecl HashMap::getUsingTable(void)" (?getUsingTable@HashMap@@QEAAPEAVHashTable@@XZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashTable::getValue(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?getValue@HashTable@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashTable::getValueAmount(void)" (?getValueAmount@HashTable@@QEAAHXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashTable::hash(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?hash@HashTable@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashMap::init(int)" (?init@HashMap@@QEAA_NH@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashTable::init(int)" (?init@HashTable@@QEAA_NH@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashTable::isContain(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?isContain@HashTable@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: int __cdecl HashMap::put(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?put@HashMap@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashTable::put(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,int)" (?put@HashTable@@QEAA_NV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: "public: bool __cdecl HashMap::rehash(void)" (?rehash@HashMap@@QEAA_NXZ) 已经在 HashMap.obj 中定义
+MyHashMap.obj : error LNK2005: main 已经在 HashMap.obj 中定义
+C:\Users\hd\Desktop\MyHashMap\x64\Debug\MyHashMap.exe : fatal error LNK1169: 找到一个或多个多重定义的符号

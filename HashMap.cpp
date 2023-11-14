@@ -14,14 +14,15 @@ public:
 	HashMap();
 	bool changeUsingTable(HashTable* newTable);
 	bool rehash();
-	int get(string key);
-	int put(string key, int value);
+	int get(string key);//如果正在rehash，那么返回两个哈希表的搜索值之和
+	int put(string key, int value);//如果正在rehash，会插入到新建的哈希表中
 	int delet(string key);
 	int getAll(string* key, int* value,int arraySize);
 	bool init(int bucketSize);
 	int getKeyAmount();
 	int getBucketAmount();
 	HashTable* createTable(int bucketSize,string keys[],int value[],int pairAmount);
+	HashTable* createTable(int bucketSize);
 	HashTable* getUsingTable();
 };
 
@@ -37,6 +38,10 @@ HashTable* HashMap::createTable(int bucketSize,string keys[],int values[],int pa
 	}
 	return r;
 
+}
+HashTable* HashMap::createTable(int bucketSize) {
+	HashTable* r = new HashTable(bucketSize);
+	return r;
 }
 bool HashMap::changeUsingTable(HashTable* newTable)
 {
@@ -63,13 +68,19 @@ bool HashMap::rehash()
 {
 	cout << "rehashing";
 	rehashing = true;
+	
 	int valueAmount = usingTable->getValueAmount();
 	int bucketAmount = usingTable->getBucketSize();
+	HashTable* newTable = createTable((int)(valueAmount * growth));
+	changeUsingTable(newTable);
 	string* keys = new string[valueAmount];
 	int* values = new int[valueAmount];
-	getUsingTable()->getAll(keys, values, valueAmount);
-	HashTable* newTable = createTable((int)(valueAmount * growth), keys, values, valueAmount);
-	changeUsingTable(newTable);
+	valueAmount = table[usingTableId == 1 ? 0 : 1]->getValueAmount();
+	table[usingTableId==1?0:1]->getAll(keys, values, valueAmount);
+	for (int i = 0; i < valueAmount; i++) {
+		getUsingTable()->put(keys[i], values[i]);
+	}
+	
 	rehashing = false;
 	delete[] keys;
 	delete[] values;
@@ -78,7 +89,11 @@ bool HashMap::rehash()
 
 int HashMap::get(string key)
 {
-	return getUsingTable()->getValue(key);
+	if(rehashing==false)
+		return getUsingTable()->getValue(key);
+	else {
+		return table[0]->getValue(key) + table[1]->getValue(key);
+	}
 	
 }
 
